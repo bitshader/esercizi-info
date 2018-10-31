@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 rm eseguibile
 rm out
 g++ -o eseguibile minore.cpp
