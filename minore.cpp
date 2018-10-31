@@ -24,6 +24,6 @@ int main()
 	}
 
 	cout << "L'elemento minimo del vettore e'	" << min;
-	cout << "\n";
+
 	return 0;
 }
