@@ -1,12 +1,12 @@
- #include <iostream>
+#include <iostream>
 using namespace std;
  
 int main() {
-int v[15];
 int min=0, n;
 
 cout << "Inserisci la dimensione: ";
 cin >> n;
+int v[n];
 
 for(int i=0; i<n; i++) 
 {
@@ -23,5 +23,6 @@ for(int i=0; i<n; i++)
 }
 
 cout << "L'elemento minimo del vettore e'	" << min;
+cout << "\n";
 return 0;
 }
