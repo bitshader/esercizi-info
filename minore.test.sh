@@ -2,10 +2,8 @@
 set -e
 
 rm -f eseguibile
-rm -f out
 
 g++ -o eseguibile minore.cpp
-
 
 function test_equality() {
     RETURN_VALUE=$1
@@ -20,18 +18,14 @@ function test_equality() {
     fi
 }
 
-
-./eseguibile <<< '4 2 3 4 5' > out
-RETURN_VALUE="$(tail -c 1 out)"
+# test 1
+RETURN_VALUE="$(./eseguibile <<< '4 2 3 4 5' | tail -c 1 )"
 EXPECTED_VALUE=2
 
 test_equality $RETURN_VALUE $EXPECTED_VALUE
 
-
-
-
-./eseguibile <<< '5 5 5 5 5 5' > out
-RETURN_VALUE="$(tail -c 1 out)"
+# test 2
+RETURN_VALUE="$(./eseguibile <<< '5 5 5 5 5 5'| tail -c 1 out)"
 EXPECTED_VALUE=5
 
 test_equality $RETURN_VALUE $EXPECTED_VALUE
