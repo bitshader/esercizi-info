@@ -1,12 +1,6 @@
 #!/bin/bash
 set -e
 
-rm -f eseguibile
-rm -f out
-
-g++ -o eseguibile minore.cpp
-
-
 function test_equality() {
     RETURN_VALUE=$1
     EXPECTED_VALUE=$2
@@ -20,18 +14,27 @@ function test_equality() {
     fi
 }
 
+function execute_and_extract() {
+    PROGRAM=$1
+    PARAMS=$2
+    ./$PROGRAM <<< $PARAMS | tail -c 1
+}
 
-./eseguibile <<< '4 2 3 4 5' > out
-RETURN_VALUE="$(tail -c 1 out)"
-EXPECTED_VALUE=2
+# build program
+EXEC=binary_exec
+g++ -o $EXEC minore.cpp
 
-test_equality $RETURN_VALUE $EXPECTED_VALUE
+# test 1
+RETURN_VALUE="$(execute_and_extract $EXEC '4 2 3 4 5')"
+test_equality $RETURN_VALUE 2
 
+# test 2
+RETURN_VALUE="$(execute_and_extract $EXEC '5 5 5 5 5 5')"
+test_equality $RETURN_VALUE 5
 
+# test 3
+RETURN_VALUE=$(execute_and_extract $EXEC '1 0')
+test_equality $RETURN_VALUE 0
 
-
-./eseguibile <<< '5 5 5 5 5 5' > out
-RETURN_VALUE="$(tail -c 1 out)"
-EXPECTED_VALUE=5
-
-test_equality $RETURN_VALUE $EXPECTED_VALUE
+# clean up
+rm -f $EXEC
