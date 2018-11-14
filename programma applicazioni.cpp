@@ -8,7 +8,7 @@ int divvv(int x,int y);
 using namespace std;
 main(){
 	int a,b,somma,differenza,indice,y,divisione,moltiplicazione;
-	bool x=false;
+	bool x;
 	cout<<"SCEGLIERE L'OPERAZIONE\n1-->\tADDIZIONE\n2-->\tSOTTRAZIONE\n3-->\tMOLTIPLICAZIONE\n4-->\tDIVISIONE\n";
 	cin>>indice;
 	
@@ -21,7 +21,7 @@ main(){
 			cout<<"\nLa somma e'\t"<<somma;
 			cout<<"\nVuoi fare un'altra addizione?\n0 per continuare\n1per uscire dal programma";
 			cin>>y;
-			if(y=1){
+			if(y==1){
 			x=true;
 			}
 			else{
@@ -36,7 +36,7 @@ main(){
 			cout<<"\nLa sottrazione e'\t"<<differenza;
 			cout<<"\nVuoi fare un'altra sottrazione?\n0 per continuare\n1per uscire dal programma";
 			cin>>y;
-			if(y=1){
+			if(y==1){
 			x=true;
 			}
 			else{
@@ -51,7 +51,7 @@ main(){
 			cout<<"\nLa moltiplicazione e'\t"<<moltiplicazione;
 			cout<<"\nVuoi fare un'altra moltiplicazione?\n0 per continuare\n1per uscire dal programma";
 			cin>>y;
-			if(y=1){
+			if(y==1){
 			x=true;
 			}
 			else{
@@ -66,7 +66,7 @@ main(){
 			cout<<"\nLa divisione e'\t"<<divisione;
 			cout<<"\nVuoi fare un'altra divisione?\n0 per continuare\n1per uscire dal programma";
 			cin>>y;
-			if(y=1){
+			if(y==1){
 			x=true;
 			}
 			else{
