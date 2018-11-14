@@ -62,4 +62,13 @@ int molt(int x,int y){
 	int moltiplicazione=x*y;
 	return molt;
 }
+
+int div(int x,int y){
+	do{
+	cout<<"Scegliere i due nuemeri da dividere\n\n";
+	cin>>x>>y;
+	}while(x!=0 && y!=0);
+	int divv=x/y;
+	return divv;
+}
 //fare divisione e moltiplicazione
