@@ -3,16 +3,18 @@
 #include <ctime>
 int sum(int x,int y);
 int sott(int x,int y);
+int molt(int x,int y);
+int divvv(int x,int y);
 using namespace std;
 main(){
-	int a,b,somma,differenza,indice,y;
+	int a,b,somma,differenza,indice,y,divisione,moltiplicazione;
 	bool x=false;
-	cout<<"SCEGLIERE L'OPERAZIONE\n1-->\tADDIZIONE\n2-->\tSOTTRAZIONE\n";
+	cout<<"SCEGLIERE L'OPERAZIONE\n1-->\tADDIZIONE\n2-->\tSOTTRAZIONE\n3-->\tMOLTIPLICAZIONE\n4-->\tDIVISIONE\n";
 	cin>>indice;
 	
 	switch(indice){
 		case 1:
-		while(x==false)
+			while(x==false)
 			{
 			x=false;
 			somma=sum(a,b);
@@ -41,6 +43,36 @@ main(){
 			x=false;}
 			}
 			break;
+		case 3:
+			while(x==false)
+			{
+			x=false;
+			moltiplicazione=molt(a,b);
+			cout<<"\nLa moltiplicazione e'\t"<<moltiplicazione;
+			cout<<"\nVuoi fare un'altra moltiplicazione?\n0 per continuare\n1per uscire dal programma";
+			cin>>y;
+			if(y=1){
+			x=true;
+			}
+			else{
+			x=false;}
+			}
+			break;
+		case 4:
+			while(x==false)
+			{
+			x=false;
+			divisione=divvv(a,b);
+			cout<<"\nLa divisione e'\t"<<divisione;
+			cout<<"\nVuoi fare un'altra divisione?\n0 per continuare\n1per uscire dal programma";
+			cin>>y;
+			if(y=1){
+			x=true;
+			}
+			else{
+			x=false;}
+			}
+			break;	
 	}
 }
 int sum(int x,int y){
@@ -59,15 +91,15 @@ int sott(int x,int y){
 int molt(int x,int y){
 	cout<<"Scegliere i due numeri da moltiplicare\n\n";
 	cin>>x>>y;
-	int moltiplicazione=x*y;
-	return molt;
+	int moltt=x*y;
+	return moltt;
 }
 
-int div(int x,int y){
+int divvv(int x,int y){
 	do{
 	cout<<"Scegliere i due nuemeri da dividere\n\n";
 	cin>>x>>y;
-	}while(x!=0 && y!=0);
+	}while(x ==0 || y ==0);
 	int divv=x/y;
 	return divv;
 }
