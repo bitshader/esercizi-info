@@ -56,3 +56,10 @@ int sott(int x,int y){
 	return sott;
 }
 
+int molt(int x,int y){
+	cout<<"Scegliere i due numeri da moltiplicare\n\n";
+	cin>>x>>y;
+	int moltiplicazione=x*y;
+	return molt;
+}
+//fare divisione e moltiplicazione
